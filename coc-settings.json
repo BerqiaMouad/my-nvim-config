@@ -1,0 +1,14 @@
+{
+  "clangd.path": "C:\\Program Files\\LLVM\\bin\\clangd.exe",
+  "languageserver": {
+    "coc-clangd": {
+      "command": "clangd",
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": ["compile_commands.json", ".vim/", ".git/", ".hg/"],
+      "initializationOptions": {
+	"compilationDatabasePath": "build"
+      }
+    }
+  },
+  "snippets.ultisnips.pythonPrompt": false
+}

@@ -1,0 +1,38 @@
+snippet cp
+	import math, sys, itertools
+	# fast reader
+	def read():
+		return sys.stdin.readline().strip()
+	# fast writer
+	def write(s):
+		sys.stdout.write(s)
+
+	# write array 
+	def write_array(a):
+		for i in a:
+			sys.stdout.write(str(i) + ' ')
+		sys.stdout.write('\n')
+
+	t = 1
+	for _ in range(t):
+		$1
+
+snippet cptest
+	import math, sys, itertools
+	# fast reader
+	def read():
+		return sys.stdin.readline().strip()
+	# fast writer
+	def write(s):
+		sys.stdout.write(s)
+
+	# write array 
+	def write_array(a):
+		for i in a:
+			sys.stdout.write(str(i) + ' ')
+		sys.stdout.write('\n')
+	
+	t = int(read())
+	for _ in range(t):
+		$1
+

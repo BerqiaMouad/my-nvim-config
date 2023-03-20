@@ -1,0 +1,118 @@
+2023-01-21 18:53:26 - Neovide panicked with the message 'Input failed: DecodeError(ReaderError(Custom { kind: UnexpectedEof, error: "EOF" }), "nvim_input")'. (File: src\bridge\ui_commands.rs; Line: 51, Column: 50)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: BaseThreadInitThunk
+  16: RtlUserThreadStart
+
+2023-01-29 23:49:45 - Neovide panicked with the message 'Resize failed: DecodeError(ReaderError(Custom { kind: UnexpectedEof, error: "EOF" }), "nvim_ui_try_resize")'. (File: src\bridge\ui_commands.rs; Line: 139, Column: 18)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: BaseThreadInitThunk
+  17: RtlUserThreadStart
+
+2023-01-29 23:49:45 - Neovide panicked with the message 'Focus Lost Failed: DecodeError(ReaderError(Custom { kind: UnexpectedEof, error: "EOF" }), "nvim_command")'. (File: src\bridge\ui_commands.rs; Line: 143, Column: 18)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: BaseThreadInitThunk
+  17: RtlUserThreadStart
+
+2023-01-29 23:49:45 - Neovide panicked with the message 'Focus Lost Failed: DecodeError(ReaderError(Custom { kind: UnexpectedEof, error: "EOF" }), "nvim_command")'. (File: src\bridge\ui_commands.rs; Line: 143, Column: 18)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: BaseThreadInitThunk
+  17: RtlUserThreadStart
+
+2023-01-29 23:49:45 - Neovide panicked with the message 'Input failed: DecodeError(ReaderError(Custom { kind: UnexpectedEof, error: "EOF" }), "nvim_input")'. (File: src\bridge\ui_commands.rs; Line: 51, Column: 50)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: BaseThreadInitThunk
+  16: RtlUserThreadStart
+
+2023-01-29 23:49:45 - Neovide panicked with the message 'Focus Lost Failed: DecodeError(ReaderError(Custom { kind: UnexpectedEof, error: "EOF" }), "nvim_command")'. (File: src\bridge\ui_commands.rs; Line: 143, Column: 18)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: BaseThreadInitThunk
+  17: RtlUserThreadStart
+
