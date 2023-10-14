@@ -18,7 +18,7 @@ pip install -r requirements.txt
 
 ```bash
 git clone <repository_url>
-cd codeforces-contest-setup
+cd my-nvim-config/Codeforces_Test_Submit
 ```
 
 #### 2. Set your Codeforces credentials in `Contest.py` and `submit.py`
