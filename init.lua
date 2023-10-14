@@ -77,6 +77,9 @@ require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
   }
 
+  -- nvim Notify
+  use 'rcarriga/nvim-notify'
+
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
@@ -177,7 +180,7 @@ vim.cmd [[
   let g:neovide_cursor_vfx_particle_drag = 3.0
 
   let g:neovide_remember_window_size = v:true
-  let g:neovide_transparency = 0.9
+  let g:neovide_transparency = 0.95
 ]]
 
 -- simple stuff in vim
@@ -199,11 +202,11 @@ vim.cmd[[
   set relativenumber
 ]]
 
-
 -- compile and run c++ for competitive programming
 vim.cmd[[
 
 " set shellcmdflag=-c
+
 
 function! TermWrapper(command) abort
 	if !exists('g:split_term_style') | let g:split_term_style = 'vertical' | endif
@@ -223,6 +226,7 @@ function! TermWrapper(command) abort
 	exec 'setlocal nornu nonu'
 	exec 'startinsert'
 	autocmd BufEnter <buffer> startinsert
+
 endfunction
 
 
@@ -230,7 +234,62 @@ command! -nargs=0 CompileAndRun call TermWrapper(printf('g++ -o %s %s && %s', ex
 "autocmd FileType cpp nnoremap <leader>cp :!g++ -o %:r % && %:r<CR>
 autocmd FileType cpp nnoremap <leader>cp :CompileAndRun<CR>
 
+command! -nargs=0 Test call TermWrapper(printf('python test.py %s', expand("%:r")))
+autocmd FileType cpp nnoremap <leader>cf :Test<CR>
+
+" command! -nargs=0 Submit call TermWrapper(printf('python submit.py %s', expand("%:t:r")))
+" autocmd FileType cpp nnoremap <leader>sub :Submit<CR>
+
+command! -nargs=0 Test2 call TermWrapper(printf('python checker.py %s', expand("%:r")))
+autocmd FileType cpp nnoremap <leader>test :Test2<CR>
+
 ]]
+
+
+
+function submitToCodeforces()
+  local problemName = vim.fn.expand("%:t:r")
+  local notify = require("notify")
+  local command = "python submit.py " .. problemName
+
+  notify("Submitting " .. problemName .. " to Codeforces", "info", {
+    title = "Submitting...",
+    timeout = 2000,
+    on_open = function()
+      local timer = vim.loop.new_timer() 
+      timer:start(2000, 0, vim.schedule_wrap(function()
+        local handle = io.popen(command)
+        if not handle then
+          notify("Failed to run command", "error", {
+            title = "Submission Result",
+            timeout = 2000,
+          })
+          return
+        end
+        local output = handle:read("*a")
+        handle:close()
+
+        -- print error if any
+        if(string.find(output, "Accepted") or string.find(output, "Pretests")) then
+          notify(output, "info", {
+            title = "Submission Result",
+            timeout = 4000,
+            icon = ""
+          })
+        else
+          notify(output, "error", {
+            title = "Submission Result",
+            timeout = 4000,
+            icon = ""
+          })
+        end
+      end))
+    end})
+end
+
+vim.api.nvim_set_keymap("n", "<leader>sub", ":lua submitToCodeforces()<CR>", {silent = true})
+
+
 
 -- configuring key mappings for BufferLine plugin 
 vim.cmd[[
@@ -238,9 +297,6 @@ vim.cmd[[
   nnoremap <silent> <leader>bn :BufferNext<CR>
   nnoremap <silent> <leader>bc :BufferClose<CR>
 ]]
-
-
-
 
 
 
